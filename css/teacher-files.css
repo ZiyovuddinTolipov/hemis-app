@@ -25,3 +25,10 @@ tr  td button {
     border-color: var(--primary-200);
     border-width: 1px;
 }
+.wrapper {
+    background: var(--bg-100);
+    height: 100vh;
+}
+.wrapper .row div label {
+    color: var(--accent-200);
+}

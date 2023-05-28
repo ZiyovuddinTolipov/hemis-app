@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/student-file.css">
+<body>
+    <div class="wrapper p-4">
+        <form class="row g-3">
+            <div class="col-md-6">
+              <label for="TopshiqTuri" class="form-label">Topshiq Turi</label>
+              <input type="text" class="form-control" id="TopshiqTuri" required>
+            </div>
+            <div class="col-md-6">
+              <label for="TopshiqNomi" class="form-label">Nomi</label>
+              <input type="text" class="form-control" id="TopshiqNomi">
+            </div>
+            <div class="col-12">
+              <label for="izoh" class="form-label">Izoh</label>
+              <input type="text" class="form-control" id="izoh" placeholder="Topshiriq izohi">
+            </div>
+            <div class="col-md-6">
+              <label for="maxBal" class="form-label">maks.Bal</label>
+              <input type="text" class="form-control" id="maxBal">
+            </div>
+            <div class="col-md-4">
+              <label for="urinishSoni" class="form-label">Urinishlar soni</label>
+              <select id="urinishSoni" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
+    </div>
+    <script src="./js/studentUpload.js"></script>
+</body>
+
+</html>

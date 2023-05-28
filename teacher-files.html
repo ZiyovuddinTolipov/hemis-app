@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/student-file.css">
+
+<body>
+    <section class="content container-fluid">
+        <div class="row p-2">
+            <div class="col col-md-8 col-lg-8">
+                <div class="box box-default ">
+                    <div class="box-header with-border ml-4">
+                        <h3 class="box-title ">Javoblar ro'yxati</h3>
+                    </div>
+
+                    <div id="data-grid" class="grid-view">
+                        <div class="box-body no-padding">
+                            <table class="table table-responsive table-striped table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th style="width:3%">#</th>
+                                        <th>Izoh</th>
+                                        <th>Fayl nomi</th>
+                                        <th>Berilgan sana</th>
+                                        <th>Ball</th>
+                                        <th>Holati</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-key="165563">
+                                        <td>1</td>
+                                        <td>bu yerda izoh</td>
+                                        <td><a href="https://hemis.samtuit.uz/static/uploads/52/d_LLDnCGYUuv0IUtnWZ80rd2Z9omPdhm.zip"
+                                                data-pjax="0">smartphone-shop-main.zip</a>; </td>
+                                        <td>07.05.2023 23:13:07</td>
+                                        <td><span class="not-set">(berilmagan)</span></td>
+                                        <td><span class="not-set">(berilmagan)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-default ">
+                    <form id="w0" id="fileUploadS">
+                        <input type="hidden" name="_csrf-frontend"
+                            value="rLzjQzOh5LxyL5We0A0GbIsAvAqeMgOYaGpblGTZox7lzI4mQ9CW60R6rK-gPUBU3nnbPdVTV9QsJGmjILXQdA==">
+                        <div class="box-header with-border">
+                            <h3 class="box-title ml-4">Yuborish</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col col-md-12">
+                                    <div class="form-group field-estudenttaskactivity-comment required">
+                                        <label class="control-label" for="estudenttaskactivity-comment">Izoh</label>
+                                        <textarea id="estudenttaskactivity-comment" class="form-control"
+                                            name="EStudentTaskActivity[comment]" maxlength="5000" rows="8"
+                                            aria-required="true"></textarea>
+
+                                        <div class="help-block"></div>
+                                    </div>
+                                    <div class="form-group field-estudenttaskactivity-filename required">
+                                        <label class="control-label" for="estudenttaskactivity-filename">Fayl
+                                            nomi</label>
+                                        <div class="upload-kit mt-4">
+
+                                            <!-- <input type="file" id="estudenttaskactivity-filename"
+                                                    class="empty-value" name="file" title="File"> -->
+
+                                            <div class="file-input">
+                                                <input type="file" name="file-input" id="file-input"
+                                                    class="file-input__input" />
+                                                <label class="file-input__label" for="file-input">
+                                                    <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                        data-icon="upload" class="svg-inline--fa fa-upload fa-w-16"
+                                                        role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path fill="currentColor"
+                                                            d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z">
+                                                        </path>
+                                                    </svg>
+                                                    <span>File Yuklash</span></label>
+                                                    
+                                                        <button type="submit" class="btn  btn-flat send-btn"><i class="fa fa-check"></i>
+                                                            Yuborish</button>
+                                                    
+                                            </div>
+                                           
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="col col-md-4 col-lg-4" id="sidebar">
+                <div class="box box-default">
+                    <div class="box-header with-border ml-4">
+                        <h4 class="box-title">Ma’lumot</h4>
+                    </div>
+
+                    <div class="box-body no-padding">
+                        <table id="w2" class="table table-striped table-bordered detail-view">
+                            <tbody>
+                                <tr>
+                                    <th>O'quv reja</th>
+                                    <td>Guruh nomi</td>
+                                </tr>
+                                <tr>
+                                    <th>Semestr</th>
+                                    <td>semestr</td>
+                                </tr>
+                                <tr>
+                                    <th>Fanlar</th>
+                                    <td>Fan Nomi</td>
+                                </tr>
+                                <tr>
+                                    <th>Topshiriq nomi</th>
+                                    <td>X-mustaqil ish</td>
+                                </tr>
+                                <tr>
+                                    <th>Maks. ball</th>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <th>Muddat</th>
+                                    <td><span class="badge bg-red">Muddat</span></td>
+                                </tr>
+                                <tr>
+                                    <th>Urinishlar soni</th>
+                                    <td>1/2</td>
+                                </tr>
+                                <tr>
+                                    <th>YN turi</th>
+                                    <td>1-qaydnoma</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <script src="./js/studentUpload.js"></script>
+</body>
+
+</html>

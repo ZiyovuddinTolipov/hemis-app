@@ -49,29 +49,34 @@ const form = document.getElementById('file-upload-form');
 var url = 'https://eduhemisuz.pythonanywhere.com/add_task/'; // Replace with the URL of your API endpoint
 // var token = '9e4eb100efbb677fcc4048634af28ef05a7c6eb2'; // Replace with your actual basic token
 var token = 'Admin:123'; // Replace with your actual basic token
-form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Form gönderimini engelleyi
-    var fileInput = document.getElementById('file-input'); // Assuming you have an input element of type 'file' with id 'file-input'
-    var file = fileInput.files[0]; // G
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Form gönderimini engelleyi
+    const fileInput = document.getElementById('file-input'); // Assuming you have an input element of type 'file' with id 'file-input'
+    const nameInput = document.getElementById('file-name'); // Assuming you have an input element of type 'file' with id 'file-input'
+    const descrInput = document.getElementById('file-text'); // Assuming you have an input element of type 'file' with id 'file-input'
+    const file = fileInput.files[0]; // G
     // et the selected file from the file input
+    console.log(descrInput,nameInput);
     var headers = new Headers();
     headers.append('Authorization', 'Basic ' + btoa(token));
-    
-var formData = new FormData();
-formData.append('file', file);
+
+    var formData = new FormData();
+    formData.append('file', file);
+    formData.append('text', nameInput);
+    formData.append('text', descrInput);
 
 
-fetch(url, {
-  method: 'POST',
-  headers: headers,
-  body: formData
-})
-  .then(response => {
-    // Handle the response from the API
-    console.log('Response:', response);
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the request
-    console.error('Error:', error);
-  });
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: formData
+    })
+        .then(response => {
+            // Handle the response from the API
+            console.log('Response:', response);
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the request
+            console.error('Error:', error);
+        });
 });

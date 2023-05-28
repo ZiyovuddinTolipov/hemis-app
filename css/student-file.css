@@ -71,7 +71,9 @@ tr td {
     color: var(--text-100);
     
 }
-
+tr {
+    border-color: #1d232b !important;
+}
 /* file input style */
 body {
     font-family: sans-serif;

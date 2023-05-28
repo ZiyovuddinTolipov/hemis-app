@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+:root {
+    --primary-100:#2563eb;
+    --primary-200:#598EF3;
+    --primary-300:#D3E6FE;
+    --accent-100:#d946ef;
+    --accent-200:#fae8ff;
+    --text-100:#cbd5e1;
+    --text-200:#94a3b8;
+    --bg-100:#1e293b;
+    --bg-200:#334155;
+    --bg-300:#475569;
+      
+}
+tr  td button {
+    color: var(--accent-200);
+    background:var(--primary-100);
+    border-color: var(--primary-200);
+    border-width: 1px;
+}

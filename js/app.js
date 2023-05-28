@@ -1,4 +1,4 @@
-const loginPage =document.getElementById('loginPage');
+const loginPage = document.getElementById('loginPage');
 
 
 // Register the login
@@ -7,25 +7,29 @@ loginPage.addEventListener('submit', (e) => {
     e.preventDefault();
     const loginUsername = document.getElementById('loginUsername').value;
     const loginPassword = document.getElementById('loginPassword').value;
-    if (email === '' || password === '') {
-        alert('Please fill in all fields');
-        return;
-    }
-    fetch('http://localhost:3000/users/login', {
+    alert(btoa(loginPassword));
+ console.log(loginUsername, loginPassword);
+    fetch('https://eduhemisuz.pythonanywhere.com/home/', {
         method: 'POST',
         headers: {
+            'Authorization': 'Basic ' + btoa(loginUsername + ':' + loginPassword),
             'Content-Type': 'application/json'
-            },
+        },
         body: JSON.stringify({
-            user: loginUsername,
-            password: loginPassword
-        })})
-        //.then(res => res.json())
-        //.then(data => console.log(data))
-      .then(data => {
-        console.log(data);
-        localStorage.setItem('token', data.token);
-        window.location.href = 'http://localhost:3000/dashboard';
+            Username: loginUsername,
+            Password: loginPassword
+        })
+    }).then(response => {
+        console.log(response.status); // HTTP status kodini konsolga chiqaring
+        console.log(response.statusText); // HTTP status matnini konsolga chiqaring
+        return response.json();
       })
-      .catch(err => console.log(err));
+      .then(data => {
+        console.log(data); // Ishlovchi ma'lumotlarni konsolga chiqaring
+      })
+      .catch(error => {
+        console.error('Xatolik:', error);
+      });
+
+
 });

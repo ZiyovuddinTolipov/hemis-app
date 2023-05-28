@@ -3,6 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+.container-fluid {
+    background: #1e293b;
+    width: 100%;
+    
+}
+.box-body {
+    padding:1em 1.2em
+}
 ul li {
     list-style: none;
+    background: #475569;
+    margin-top: 1em;
 }
+.timeline-header {
+    padding: 0.3rem 1rem;
+background:#2563eb;
+color: #fae8ff;
+}
+.btn-res {
+        background: #598EF3;
+        color: #fae8ff;
+}
+.timeline-body {
+    padding: 10px 20px;
+    color: #cbd5e1;
+}
+.text-mute {
+    color: #d946ef;
+}
+

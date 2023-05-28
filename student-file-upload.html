@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="box box-default ">
-                    <form id="w0" action="/education/tasks?task=8898" method="post" data-pjax="0">
+                    <form id="w0" id="fileUploadS">
                         <input type="hidden" name="_csrf-frontend"
                             value="rLzjQzOh5LxyL5We0A0GbIsAvAqeMgOYaGpblGTZox7lzI4mQ9CW60R6rK-gPUBU3nnbPdVTV9QsJGmjILXQdA==">
                         <div class="box-header with-border">
@@ -61,36 +61,24 @@
                                 <div class="col col-md-12">
                                     <div class="form-group field-estudenttaskactivity-comment required">
                                         <label class="control-label" for="estudenttaskactivity-comment">Izoh</label>
-                                        <textarea id="estudenttaskactivity-comment" class="form-control"
+                                        <!-- <textarea id="estudenttaskactivity-comment" class="form-control"
                                             name="EStudentTaskActivity[comment]" maxlength="5000" rows="8"
-                                            aria-required="true"></textarea>
+                                            aria-required="true"></textarea> -->
 
                                         <div class="help-block"></div>
                                     </div>
                                     <div class="form-group field-estudenttaskactivity-filename required">
-                                        <label class="control-label" for="estudenttaskactivity-filename">Fayl
-                                            nomi</label>
+                                        <!-- <label class="control-label" for="estudenttaskactivity-filename">Fayl
+                                            nomi</label> -->
                                         <div class="upload-kit">
                                             <label for="file">
 
-                                                <input type="hidden" id="estudenttaskactivity-filename"
+                                                <input type="file" id="estudenttaskactivity-filename"
                                                     class="empty-value" name="EStudentTaskActivity[filename]">
                                             </label>
-                                            <ul class="files ui-sortable"></ul>
-                                            <li class="upload-kit-input"><input type="file" id="w1"
-                                                    name="fileinput" multiple="multiple"
-                                                    accept=".pdf, .docx, .doc, .ppt, .pptx, .xls, .xlsx, .zip, .rar">
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div><span data-toggle="popover"
-                                                    class="glyphicon glyphicon-exclamation-sign error-popover"></span><span
-                                                    class="glyphicon glyphicon-circle-arrow-down drag"></span><span
-                                                    class="glyphicon glyphicon-plus-sign add"></span>
-                                            </li>
+                                            
                                         </div>
 
-                                        <div class="help-block"></div>
                                     </div>
                                 </div>
                             </div>
@@ -155,6 +143,7 @@
 
         </div>
     </section>
+    <script src="./js/studentUpload.js"></script>
 </body>
 
 </html>

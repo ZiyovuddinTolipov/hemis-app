@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uch xonali sonning o'nlik va yuzliklar xonalari</title>
+  </head>
+  <body>
+    <h1>Uch xonali sonning o'nlik va yuzliklar xonalari</h1>
+    <label for="son">Uch xonali sonni kiriting:</label>
+    <input type="number" id="son" name="son"><br><br>
+    <button onclick="xonalar()">Hisoblash</button>
+    <p id="natija"></p>
+
+    <script>
+      function xonalar() {
+        var son = document.getElementById("son").value;
+        var oliklar = Math.floor((son % 100) / 10);
+        var yuzlar = Math.floor(son / 100);
+        document.getElementById("natija").innerHTML = "Uch xonali sonning o'nliklar xonasi: " + oliklar + "<br>Uch xonali sonning yuzliklar xonasi: " + yuzlar;
+      }
+    </script>
+ </body>
+</html>

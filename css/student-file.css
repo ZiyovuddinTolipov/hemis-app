@@ -1,35 +1,44 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
 }
 .container-fluid {
-    background: #1e293b;
-    width: 100%;
-    
+  background: #1e293b;
+  width: 100%;
 }
 .box-body {
-    padding:1em 1.2em
+  padding: 1em 1.2em;
 }
 ul li {
-    list-style: none;
-    background: #475569;
-    margin-top: 1em;
+  list-style: none;
+  margin-top: 1em;
+  background: linear-gradient(145deg, #4c5b70, #404d5f);
+  box-shadow: 5px 5px 10px #1d232b, -5px -5px 10px #7187a7;
 }
 .timeline-header {
-    padding: 0.3rem 1rem;
-background:#2563eb;
-color: #fae8ff;
+  padding: 0.3rem 1rem;
+  background: #2563eb;
+  color: #fae8ff;
+}
+.timeline-header b {
+  color: #d946ef;
+}
+.timeline-header strong {
+    font-size: 22px;
+    font-weight: 300;
+    
 }
 .btn-res {
-        background: #598EF3;
-        color: #fae8ff;
+  background: #598ef3;
+  color: #fae8ff;
 }
 .timeline-body {
-    padding: 10px 20px;
-    color: #cbd5e1;
+  padding: 10px 20px;
+  color: #cbd5e1;
 }
 .text-mute {
-    color: #d946ef;
+  color: #d946ef;
 }
-

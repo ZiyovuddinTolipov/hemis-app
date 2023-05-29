@@ -1,5 +1,5 @@
 const loginPage = document.getElementById('loginPage');
-
+var siteUrl = 'https://hemis-app.vercel.app'; 
 
 // Register the login
 
@@ -33,7 +33,7 @@ loginPage.addEventListener('submit', (e) => {
           localStorage.setItem('token', data[0].token)
           localStorage.setItem('username', loginUsername)
           localStorage.setItem('password',loginPassword)
-          window.location.href = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-files.html"
+          window.location.href = `${siteUrl}/student-files.html`
           // alert('hi')
         }
 

@@ -1,6 +1,7 @@
 
     var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
-var endpoint = '/home/'; 
+var endpoint = '/home/';
+var siteUrl = 'https://hemis-app.vercel.app'; 
 
 var token = localStorage.getItem('token'); 
 var username = localStorage.getItem('username'); 
@@ -103,11 +104,11 @@ if (data[0].type == "student") {
     });
 function fileSendS(params) {
     localStorage.setItem('send_s', params);
-    window.location.href = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-file-upload.html'
+    window.location.href = `${siteUrl}/student-file-upload.html`
     // confirm('jsjsjjs');
 }
 function fileSendT(params) {
     localStorage.setItem('send_s', params);
-    window.location.href = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-file-upload.html'
+    window.location.href = `${siteUrl}/student-file-upload.html`
     // confirm('jsjsjjs');
 }

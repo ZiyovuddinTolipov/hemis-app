@@ -6,8 +6,13 @@ var siteUrl = 'https://hemis-app.vercel.app';
 var token = localStorage.getItem('token');
 var send_s = localStorage.getItem('send_s');
 
+var container = document.getElementById('teacher-page');
 console.log(token);
-
+function errorMsg(){
+    var tr = document.createElement('tr');
+    tr.innerHTML = `<h1>Uzur xatolik</h1>`
+    container.appendChild(div);
+}
 var myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${token}`);
 
@@ -19,48 +24,21 @@ fetch(apiUrl + endpoint + send_s, {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        var container = document.getElementById('teacher-page');
-        data.status == "error" ?
-            data.forEach(item => {
-                var tr = document.createElement('tr');
-                tr.innerHTML = `<h1>Uzur xatolik</h1>`
-                container.appendChild(div);
-            }) ?
+        console.log(data)
+        data.status == "error" ? errorMsg() :
                 data.forEach(item => {
                     var tr = document.createElement('tr');
                     tr.innerHTML = `
-        <i class="fa bg-blue fa-check" />
-        <div class="timeline-item">
-            <span class="time"><i class="fa fa-star" />
-
-
-            <h3 class="timeline-header ">  ${item.name}  <span style={{ color: "#fae8ff" }}>  
-            </span></h3>
-
-            <div class="timeline-body">
-                   <p>
-                ${item.description}
-                   <br />
-                </p>
-
-                <div class="timeline-footer mt30">
-                    <p class="text-mute">
-                        Topshiriq fayllari </p>
-                    <a class="download-item" href="${item.file}">
-                        <i class="fa fa-paperclip " />${item.file_name} <span class="pull-right">74 KiB</span>
-                    </a>
-                </div>
-                <p class="text-right">
-                <a class="btn btn-res" href="#"  onclick="fileSendS(${item.id})"> <i class="fa fa-reply"></i> Yuborganlar </a>
-                </p>
-            </div>
-        </span></div> 
+                    <td>${item.id}</td>
+                    <td><a href="${item.file}">${item.file_name}</a></td>
+                    
+                    <td>${item.user}</td>
+                    <td><input type="number" ></td>
         `;
-                    container.appendChild(div);
+                    container.appendChild(tr);
                 })
     
-}
+
       // Oynaga chiqarish
       
     })

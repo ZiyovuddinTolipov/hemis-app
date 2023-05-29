@@ -1,6 +1,6 @@
 
-var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
-// var siteUrl = 'https://hemis-app.vercel.app';
+// var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
+var siteUrl = 'https://hemis-app.vercel.app';
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
     event.preventDefault();
 

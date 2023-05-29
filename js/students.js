@@ -1,7 +1,7 @@
 var apiUrl = "https://eduhemisuz.pythonanywhere.com";
 var endpoint = "/home/";
-var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
-// var siteUrl = 'https://hemis-app.vercel.app';
+// var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
+var siteUrl = 'https://hemis-app.vercel.app';
 
 var token = localStorage.getItem("token");
 var username = localStorage.getItem("username");

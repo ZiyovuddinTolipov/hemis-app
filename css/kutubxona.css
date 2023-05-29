@@ -27,7 +27,7 @@
   .ag-courses_item {
     -ms-flex-preferred-size: calc(33.33333% - 30px);
     flex-basis: calc(33.33333% - 30px);
-  
+   max-width: 100%;
     margin: 0 15px 30px;
   
     overflow: hidden;

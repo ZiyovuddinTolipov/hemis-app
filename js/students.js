@@ -1,7 +1,7 @@
 
     var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
 var endpoint = '/home/';
-var siteUrl = 'https://hemis-app.vercel.app'; 
+var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app'; 
 
 var token = localStorage.getItem('token'); 
 var username = localStorage.getItem('username'); 
@@ -87,7 +87,7 @@ if (data[0].type == "student") {
                     </a>
                 </div>
                 <p class="text-right">
-                <a class="btn btn-res" href="#"  onclick="fileSendS(${item.id})"> <i class="fa fa-reply"></i> Yuborganlar </a>
+                <a class="btn btn-res" href="#"  onclick="fileSendT(${item.id})"> <i class="fa fa-reply"></i> Yuborganlar </a>
                 </p>
             </div>
         </span></div> 
@@ -109,6 +109,6 @@ function fileSendS(params) {
 }
 function fileSendT(params) {
     localStorage.setItem('send_s', params);
-    window.location.href = `${siteUrl}/student-file-upload.html`
+    window.location.href = `${siteUrl}/teacher-files.html`
     // confirm('jsjsjjs');
 }

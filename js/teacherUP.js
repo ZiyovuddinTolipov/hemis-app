@@ -1,7 +1,8 @@
 
 var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
 var endpoint = '/getwork/';
-var siteUrl = 'https://hemis-app.vercel.app';
+// var siteUrl = 'https://hemis-app.vercel.app';
+var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app';
 
 var token = localStorage.getItem('token');
 var send_s = localStorage.getItem('send_s');
@@ -33,7 +34,8 @@ fetch(apiUrl + endpoint + send_s, {
                     <td><a href="${item.file}">${item.file_name}</a></td>
                     
                     <td>${item.user}</td>
-                    <td><input type="number" ></td>
+                    <td> ${item.rating == false ? `<input type='number' class='input-group' id='ratingS' onchange='onchangeRat(${item.id})'>` :  item.rating}</td>
+                    <td> ${item.rating == false ? `<button  class='p-1 border-0' onclick='SendRat(${item.id})'>Jo\'natish</button>` :  item.rating}</td>
         `;
                     container.appendChild(tr);
                 })
@@ -55,3 +57,14 @@ function fileSendT(params) {
     window.location.href = `${siteUrl}/student-file-upload.html`
     // confirm('jsjsjjs');
 }
+
+function onchangeRat(params){
+    const ratingS = document.getElementById('ratingS').value;
+    console.log(ratingS, params);
+    return ratingS;
+    
+}
+// function SendRat(params) {
+
+//     alert(ratingS+" "+params);
+// }

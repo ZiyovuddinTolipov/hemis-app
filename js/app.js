@@ -1,5 +1,5 @@
 const loginPage = document.getElementById('loginPage');
-var siteUrl = 'https://hemis-app.vercel.app'; 
+var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app'; 
 
 // Register the login
 

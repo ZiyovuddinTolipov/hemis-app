@@ -63,32 +63,6 @@ fetch(apiUrl + endpoint, {
                 container.appendChild(div);
             });
         } else {
-            teacherStatus.innerHTML =
-            `
-            <table id="w2" className="table  ">
-                            <tbody>
-                                <tr>
-                                    <th>Diskret Matematika</th>
-                                    <td>Fan Nomi</td>
-                                </tr>
-                                <tr>
-                                    <th>Kutubxonaga Malumot qo'shish</th>
-                                    <td><button className="btn">Qo'shish</button></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Topshiriq qo'shish</th>
-                                    <td><a href="./teacher-files-upload.html"><button className="btn">Qo'shish</button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Yangi o'quvchi</th>
-                                    <td><button className="btn">Qo'shish</button></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-            `
             
             items.forEach((item) => {
                 var div = document.createElement("li");

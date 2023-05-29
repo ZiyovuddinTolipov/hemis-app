@@ -1,8 +1,8 @@
 
 var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
 var endpoint = '/getwork/';
-var siteUrl = 'https://hemis-app.vercel.app';
-// var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app';
+// var siteUrl = 'https://hemis-app.vercel.app';
+var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app';
 
 var token = localStorage.getItem('token');
 var send_s = localStorage.getItem('send_s');

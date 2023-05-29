@@ -1,16 +1,13 @@
 var apiUrl = "https://eduhemisuz.pythonanywhere.com";
 var endpoint = "/home/";
-// var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
-var siteUrl = 'https://hemis-app.vercel.app';
+var siteUrl = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app";
+// var siteUrl = 'https://hemis-app.vercel.app';
 
 var token = localStorage.getItem("token");
 var username = localStorage.getItem("username");
 var password = localStorage.getItem("password");
-console.log(token);
-// const loginUsername = 'userbek';
-// const loginPassword = 'Qwerty4321'
-// const loginUsername = 'userbek';
-// const loginPassword = 'Qwerty4321'
+const teacherStatus = document.getElementById("teacher-status");
+
 
 fetch(apiUrl + endpoint, {
     method: "POST",
@@ -30,16 +27,9 @@ fetch(apiUrl + endpoint, {
                 div.innerHTML = `
         <i class="fa bg-blue fa-check" />
         <div class="timeline-item">
-            <span class="time"><i class="fa fa-star" />
-
-
-            <h3 class="timeline-header ">  ${item.name
-                    } <b>|</b> <span style={{ color: "#fae8ff" }}>${item.status == "Berildi"
-                        ? item.status
-                        : item.status + " | " + item.rating
-                    }  
+            <span class="time">
+            <h3 class="timeline-header ">  ${item.name} <b>|</b> <span style={{ color: "#fae8ff" }}>${item.status == "Berildi" ? item.status : item.status + " | " + item.rating}  
             </span></h3>
-
             <div class="timeline-body">
                    <p>
                 ${item.description}
@@ -73,6 +63,33 @@ fetch(apiUrl + endpoint, {
                 container.appendChild(div);
             });
         } else {
+            teacherStatus.innerHTML =
+            `
+            <table id="w2" className="table  ">
+                            <tbody>
+                                <tr>
+                                    <th>Diskret Matematika</th>
+                                    <td>Fan Nomi</td>
+                                </tr>
+                                <tr>
+                                    <th>Kutubxonaga Malumot qo'shish</th>
+                                    <td><button className="btn">Qo'shish</button></td>
+                                </tr>
+
+                                <tr>
+                                    <th>Topshiriq qo'shish</th>
+                                    <td><a href="./teacher-files-upload.html"><button className="btn">Qo'shish</button></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Yangi o'quvchi</th>
+                                    <td><button className="btn">Qo'shish</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+            `
+            
             items.forEach((item) => {
                 var div = document.createElement("li");
                 div.innerHTML = `
@@ -106,7 +123,6 @@ fetch(apiUrl + endpoint, {
                 container.appendChild(div);
             });
         }
-        // Oynaga chiqarish
     })
     .catch((error) => {
         console.error("Xatolik yuz berdi:", error);
@@ -114,11 +130,9 @@ fetch(apiUrl + endpoint, {
 function fileSendS(params) {
     localStorage.setItem("send_s", params);
     window.location.href = `${siteUrl}/student-file-upload.html`;
-    // confirm('jsjsjjs');
 }
 function fileSendT(params) {
     localStorage.setItem("send_s", params);
     window.location.href = `${siteUrl}/teacher-files.html`;
-    // confirm('jsjsjjs');
 }
 

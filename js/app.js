@@ -5,9 +5,9 @@ const loginPage = document.getElementById('loginPage');
 
 loginPage.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const loginUsername = document.getElementById('loginUsername').value;
     const loginPassword = document.getElementById('loginPassword').value;
-    alert(btoa(loginPassword));
  console.log(loginUsername, loginPassword);
     fetch('https://eduhemisuz.pythonanywhere.com/home/', {
         method: 'POST',

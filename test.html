@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>File Upload</title>
 </head>
-
 <body>
 
   <form id="uploadForm">
@@ -13,32 +11,46 @@
     <input type="file" id="file" accept=".txt,.pdf,.doc,.docx">
     <button type="submit">Upload</button>
   </form>
-  <div id="container">
-    <a href="" onclick="fileSendS()"></a>
-  </div>
+
   <script>
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Token 9e4eb100efbb677fcc4048634af28ef05a7c6eb2");
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    var raw = "";
+      const username = 'Admin';
+      const password = '123';
+      const name = document.getElementById('name').value;
+      const description = document.getElementById('description').value;
+      const file = document.getElementById('file').files[0];
 
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-    };
-    fetch("https://eduhemisuz.pythonanywhere.com/getwork/3", requestOptions)
-      .then(response => response.json())
-      .then(result => 
-      // console.log( result)
-      result.status == "error" ? console.log("hi") : console.log('jonindan')
-        
-      
-     
-      
-      )
-      .catch(error => console.log('error', error));
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('description', description);
+      formData.append('file', file);
+
+      fetch('https://eduhemisuz.pythonanywhere.com/add_task/', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Authorization': 'Basic ' + btoa(username + ':' + password),
+        },
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json(); // Parse response as JSON
+          } else {
+            throw new Error('Error: ' + response.status);
+          }
+        })
+        .then(data => {
+          console.log(data);
+          // Handle the response data
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle any errors
+        });
+    });
   </script>
 
 </body>
-
 </html>

@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>File Upload</title>
 </head>
+<style>
+  .modal {
+  display: none; /* Modal oynani ko'rsatish */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Modal fon rangi */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+</style>
+
 <body>
 
-  <form id="uploadForm">
+  <!-- <form id="uploadForm">
     <input type="text" id="name" placeholder="Name">
     <input type="text" id="description" placeholder="Description">
     <input type="file" id="file" accept=".txt,.pdf,.doc,.docx">
     <button type="submit">Upload</button>
-  </form>
+  </form> -->
+  <button type="button" data-toggle="modal" data-target="#myModal">Modalni ochish</button>
+
+  <!-- Modal oyna -->
+  <div id="myModal" class="modal">
+    <!-- Modalning ichki qismi -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="uploadForm">
+        <input type="file" id="file" accept=".txt,.pdf,.doc,.docx">
+        <button type="submit">Upload</button>
+      </form>
+
+    </div>
+  </div>
 
   <script>
-    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    document.getElementById('uploadForm').addEventListener('submit', function (event) {
       event.preventDefault();
+      const token = localStorage.getItem('token');
+      const id = localStorage.getItem('send_s');
 
-      const username = 'Admin';
-      const password = '123';
-      const name = document.getElementById('name').value;
-      const description = document.getElementById('description').value;
       const file = document.getElementById('file').files[0];
 
+      const username = localStorage.getItem('username');
+      // const password = localStorage.getItem('password');
       const formData = new FormData();
-      formData.append('name', name);
-      formData.append('description', description);
       formData.append('file', file);
+      formData.append('id', id);
+      formData.append('username', username);
+      console.log(id,token,username);
 
-      fetch('https://eduhemisuz.pythonanywhere.com/add_task/', {
+      fetch('https://eduhemisuz.pythonanywhere.com/send_work/', {
         method: 'POST',
         body: formData,
         headers: {
-          'Authorization': 'Basic ' + btoa(username + ':' + password),
+          // 'Authorization': 'Basic ' + btoa(username + ':' + password),
+          'Authorization': 'Token '+ token,
         },
       })
         .then(response => {
@@ -52,5 +91,8 @@
     });
   </script>
 
+  <script src="./test.js"></script>
+
 </body>
+
 </html>

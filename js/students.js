@@ -50,8 +50,7 @@ fetch(apiUrl + endpoint, {
                     <p class="text-mute">
                         Topshiriq fayllari </p>
                     <a class="download-item" href="${item.file}">
-                        <i class="fa fa-paperclip " />${item.file_name
-                    } <span class="pull-right">74 KiB</span>
+                      ${item.file_name} <span class="pull-right">74 KiB</span>
                     </a>
                 </div>
                 

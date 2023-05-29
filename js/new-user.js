@@ -1,9 +1,10 @@
+const token = localStorage.getItem('token');
 
 document.getElementById('loginPage').addEventListener('submit', function(event){
 
     event.preventDefault();
     var myHeaders = new Headers();
-myHeaders.append("Authorization", "Token 9e4eb100efbb677fcc4048634af28ef05a7c6eb2");
+myHeaders.append("Authorization", `Token ${token}`);
 myHeaders.append("Content-Type", "application/json");
 
 const newUsername = document.getElementById("newUsername").value;

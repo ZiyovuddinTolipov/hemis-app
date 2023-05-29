@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>File Upload</title>
 </head>
+
 <body>
 
   <form id="uploadForm">
@@ -11,12 +13,30 @@
     <input type="file" id="file" accept=".txt,.pdf,.doc,.docx">
     <button type="submit">Upload</button>
   </form>
-<div id="container">
-  
-</div>
-  <script src="./js/test.js">
-  
+  <div id="container">
+<a href="" onclick="fileSendS()"></a>
+  </div>
+  <script>
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Token 9e4eb100efbb677fcc4048634af28ef05a7c6eb2");
+
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+
+    fetch("https://eduhemisuz.pythonanywhere.com/save/1", requestOptions)
+      // .then(response => response.json())
+      .then(result => 
+      // console.log(result)
+      window.location.reload();
+       )
+      // window.location = result
+      
+      .catch(error => console.log('error', error));
   </script>
 
 </body>
+
 </html>

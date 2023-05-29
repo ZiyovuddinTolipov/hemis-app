@@ -8,6 +8,7 @@ loginPage.addEventListener('submit', (e) => {
 
     const loginUsername = document.getElementById('loginUsername').value;
     const loginPassword = document.getElementById('loginPassword').value;
+
  console.log(loginUsername, loginPassword);
     fetch('https://eduhemisuz.pythonanywhere.com/home/', {
         method: 'POST',
@@ -25,7 +26,18 @@ loginPage.addEventListener('submit', (e) => {
         return response.json();
       })
       .then(data => {
-        console.log(data); // Ishlovchi ma'lumotlarni konsolga chiqaring
+        console.log(data.detail); // Ishlovchi ma'lumotlarni konsolga chiqaring
+        if (data.detail == 'Invalid username/password.') {
+          alert('Please enter');
+        } else {
+          localStorage.setItem('token', data[0].token)
+          localStorage.setItem('username', loginUsername)
+          localStorage.setItem('password',loginPassword)
+          window.location.href = "file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-files.html"
+          // alert('hi')
+        }
+
+      
       })
       .catch(error => {
         console.error('Xatolik:', error);

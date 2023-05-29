@@ -1,20 +1,24 @@
 
-    var apiUrl = 'https://eduhemisuz.pythonanywhere.com'; // API ning manzili
-var endpoint = '/home/'; // Olish kerak bo'lgan ma'lumotlar manzili
-// localStorage.setItem('loginUsername', "9e4eb100efbb677fcc4048634af28ef05a7c6eb2")
-// Tokenni olish
-// var token = localStorage.getItem('token'); // yoki tokenni olish uchun muvofiqlashtirilgan usulni ishlatish
+    var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
+var endpoint = '/home/'; 
+
+var token = localStorage.getItem('token'); 
+var username = localStorage.getItem('username'); 
+var password = localStorage.getItem('password'); 
+console.log(token);
 // const loginUsername = 'userbek';
 // const loginPassword = 'Qwerty4321'
-const loginUsername = 'userbek';
-const loginPassword = 'Qwerty4321'
+// const loginUsername = 'userbek';
+// const loginPassword = 'Qwerty4321'
+
 
 fetch(apiUrl + endpoint, {
     method: 'POST',
-    headers: {
-        'Authorization': 'Basic ' + btoa(loginUsername + ':' + loginPassword),
+    headers:{
+        'Authorization': 'Basic ' + btoa(username + ':' + password),
         'Content-Type': 'application/json'
     },
+    
 })
 .then(response => response.json())
 .then(data => {
@@ -47,7 +51,7 @@ if (data[0].type == "student") {
                     </a>
                 </div>
                 <p class="text-right">
-                ${item.status == "Berildi" ? ' <a class="btn btn-res " href="#"> <i class="fa fa-reply"></i> Yuborish </a> ' : ' '} 
+                ${item.status == "Berildi" ? `<button class="btn btn-res " onclick="fileSendS(${item.id})"  > <i class="fa fa-reply"></i> Yuborish </button> ` : ' '} 
                   
 
                 </p>
@@ -82,9 +86,7 @@ if (data[0].type == "student") {
                     </a>
                 </div>
                 <p class="text-right">
-                ${item.status == "Berildi" ? ' <a class="btn btn-res " href="#"> <i class="fa fa-reply"></i> Yuborish </a> ' : ' '} 
-                  
-
+                <a class="btn btn-res" href="#"  onclick="fileSendS(${item.id})"> <i class="fa fa-reply"></i> Yuborganlar </a>
                 </p>
             </div>
         </span></div> 
@@ -99,3 +101,13 @@ if (data[0].type == "student") {
     .catch(error => {
       console.error('Xatolik yuz berdi:', error);
     });
+function fileSendS(params) {
+    localStorage.setItem('send_s', params);
+    window.location.href = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-file-upload.html'
+    // confirm('jsjsjjs');
+}
+function fileSendT(params) {
+    localStorage.setItem('send_s', params);
+    window.location.href = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app/student-file-upload.html'
+    // confirm('jsjsjjs');
+}

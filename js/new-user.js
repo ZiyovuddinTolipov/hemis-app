@@ -22,8 +22,11 @@ var requestOptions = {
 };
 
 fetch("https://eduhemisuz.pythonanywhere.com/add_user/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
+  .then(response => response.json())
+  .then(result =>
+    //  console.log(result)
+     result.success = "Done" ? alert(`Yangi ${newUsername} nomli talaba qo'shildi`): ''
+     )
   .catch(error => console.log('error', error));
 
 })

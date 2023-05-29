@@ -14,26 +14,28 @@
     <button type="submit">Upload</button>
   </form>
   <div id="container">
-<a href="" onclick="fileSendS()"></a>
+    <a href="" onclick="fileSendS()"></a>
   </div>
   <script>
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Token 9e4eb100efbb677fcc4048634af28ef05a7c6eb2");
 
+    var raw = "";
+
     var requestOptions = {
       method: 'GET',
       headers: myHeaders,
-      redirect: 'follow'
     };
-
-    fetch("https://eduhemisuz.pythonanywhere.com/save/1", requestOptions)
-      // .then(response => response.json())
+    fetch("https://eduhemisuz.pythonanywhere.com/getwork/3", requestOptions)
+      .then(response => response.json())
       .then(result => 
-      // console.log(result)
-      window.location.reload();
-       )
-      // window.location = result
+      // console.log( result)
+      result.status == "error" ? console.log("hi") : console.log('jonindan')
+        
       
+     
+      
+      )
       .catch(error => console.log('error', error));
   </script>
 

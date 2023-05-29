@@ -31,8 +31,7 @@ ul li {
   list-style: none;
   margin-top: 1em;
   border-radius: 10px;
-  background: linear-gradient(15deg, #4c5b70, #404d5f);
-  box-shadow: 5px -5px 10px #1d232b, 5px -5px 10px #7187a7;
+  background: var(--bg-200);
 }
 .timeline-header {
   padding: 0.3rem 1rem;

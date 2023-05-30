@@ -66,6 +66,7 @@ tr th {
 }
 tr td {
     color: var(--text-100);
+    width: 100px;
 }
 .form-group  label {
     color: var(--text-100);
@@ -119,5 +120,5 @@ tr {
     color: var(--accent-200);
   }
  .btn-primary {
-  width: 300px;
+  /* width: 300px; */
  }

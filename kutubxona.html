@@ -7,22 +7,24 @@
     <link rel="shortcut icon" href="./img/logo.png" type="image/png" />
     <link rel='stylesheet' href='https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css'>
     <link rel="stylesheet" href="css/kutubxona.css">
-
 </head>
-
 <body>
-    <!-- partial:index.partial.html -->
+    <nav class="navbar navbar-expand-lg  " style="background: #1e293b;">
+        <a class="navbar-brand" href="#">Edu</a>
+        <a class="nav-link" onclick="boshsahifa()">Bosh sahifa <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="./index.html">Chiqish <span class="sr-only">(current)</span></a>
+      </nav>
     <div class="ag-format-container">
         <h1>Kutubxona</h1>
         <div class="ag-courses_box" id="ag-courses_box" >
-
-
         </div>
     </div>
-    <!-- partial -->
-
     <script src="./js/books.js">
-  
+    </script>
+    <script>
+        function boshsahifa() {
+           localStorage.getItem("role") == "student" ? window.location.href="https://hemis-app.vercel.app/student.html" :window.location.href="https://hemis-app.vercel.app/teacher.html" 
+        }
     </script>
 </body>
 

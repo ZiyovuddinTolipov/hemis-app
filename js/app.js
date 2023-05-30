@@ -27,15 +27,16 @@ loginPage.addEventListener('submit', (e) => {
         return response.json();
       })
       .then(data => {
-        console.log(data.detail); // Ishlovchi ma'lumotlarni konsolga chiqaring
+        console.log(data); // Ishlovchi ma'lumotlarni konsolga chiqaring
         if (data.detail == 'Invalid username/password.') {
           alert('Please enter');
         } else {
           localStorage.setItem('token', data[0].token)
+          localStorage.setItem('role', data[0].type)
           localStorage.setItem('username', loginUsername)
           localStorage.setItem('password',loginPassword)
-          window.location.href = `${siteUrl}/files.html`
-          // alert('hi')
+          data[0].type =='student' ? window.location.href = `${siteUrl}/student.html` : window.location.href = `${siteUrl}/teacher.html`
+          
         }
 
       

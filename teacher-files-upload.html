@@ -10,37 +10,50 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/student-file.css">
-<link rel="stylesheet" href="css/teacher-files.css">
+<!-- <link rel="stylesheet" href="css/student-file.css">
+<link rel="stylesheet" href="css/teacher-files.css"> -->
+<link rel="stylesheet" href="css/login.css">
 <link rel="shortcut icon" href="./img/logo.png" type="image/png" />
-
+<style>
+  .inner-container{
+    width:400px;
+    height:500px;
+    position:absolute;
+    top:calc(50vh - 250px);
+    left:calc(50vw - 200px);
+    overflow:hidden;
+  }
+</style>
 <body>
-  <div class="wrapper p-4 w-100">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <form class="row g-3" id="uploadForm">
-        <div class="col-md-12">
-          <label for="TopshiqNomi" class="form-label">Topshiq Nomi</label>
-          <input type="text" class="form-control" id="TopshiqNomi" required>
-        </div>
-
-        <div class="col-12">
-          <label for="izoh" class="form-label">Izoh</label>
-          <textarea type="text" class="form-control" id="izoh" placeholder="Topshiriq izohi" rows="4" cols="50"></textarea>
-        </div>
-
-        <div class="file-input mt-4 col-md-2">
-          <input type="file" name="file-input" id="file-input" class="file-input__input" />
-          <label class="file-input__label" for="file-input">
-           File Yuklash</label>
-
-            <button type="submit" class="btn btn-primary " style=" width: 300px;">Yuborish</button>
-        </div>
-       
-      </form>
+  <nav class="navbar navbar-expand-lg  ">
+    <a class="navbar-brand" href="./teacher.html">Bosh sahifa</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Chiqish <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
     </div>
-    <div class="col-3"></div>
-  </div>
+  </nav>
+  <div class="vid-container">
+    <div class="inner-container">
+        <form class="box" id="uploadForm">
+            <h1>Topshriqni qo'shish</h1>
+            <input type="text" class="form-control" id="TopshiqNomi" placeholder="Topshiq nomi" required>
+            <textarea type="text" class="form-control" id="izoh" placeholder="Topshiriq izohi" rows="4" cols="50"></textarea>
+            <input type="file" placeholder="file" id="file-input" required />
+            <button  type="submit">Jo'natish</button>
+        </form>
+    </div>
+</div>
+</div>
+</div>
   <script src="./js/studentUpload.js"></script>
 </body>
 

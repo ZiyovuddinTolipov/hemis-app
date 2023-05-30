@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <title>Kutubxona</title>
     <link rel="shortcut icon" href="./img/logo.png" type="image/png" />
-    <link rel='stylesheet' href='https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css'>
-    <link rel="stylesheet" href="css/kutubxona.css">
+    <!-- <link rel='stylesheet' href='https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css'> -->
+    <!-- <link rel="stylesheet" href="css/kutubxona.css"> -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/student-file.css">
+<link rel="stylesheet" href="css/teacher-files.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg  " style="background: #1e293b;">
@@ -15,11 +17,40 @@
         <a class="nav-link" onclick="boshsahifa()" >Bosh sahifa <span class="sr-only">(current)</span></a>
         <a class="nav-link" href="./index.html">Chiqish <span class="sr-only">(current)</span></a>
       </nav>
-    <div class="ag-format-container">
-        <h1>Kutubxona</h1>
-        <div class="ag-courses_box" id="ag-courses_box" >
-        </div>
-    </div>
+    
+        <section class="content container-fluid">
+            <div class="row p-2">
+                <div class="col col-md-8 col-lg-8">
+                    <div class="box box-default ">
+                        <div class="box-header with-border ml-4">
+                            <h3 class="box-title ">Kutubxona</h3>
+                        </div>
+    
+                        <div id="data-grid" class="grid-view">
+                            <div class="box-body no-padding">
+                                <table class="table  table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>#id</th>
+                                            <th>Fayl</th>
+                                            <th>Nomi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id='kutubxona'>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+    
+           
+    
+    
+            </div>
+        </section>
     <script src="./js/books.js">
     </script>
     <script>

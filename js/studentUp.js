@@ -29,8 +29,8 @@ document.getElementById('uploadForm').addEventListener('submit', function (event
         }
       })
       .then(data => {
-        data.status == "Qo'shildi" ? location.href = `${siteUrl}/files.html` : null;
-        // console.log(data);
+        // data.response == 'OK' ? location.href = `${siteUrl}/files.html` : null;
+        console.log(data);
         // Handle the response data
       })
       .catch(error => {

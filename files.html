@@ -20,6 +20,12 @@
     }
 </style>
 <body>
+    <nav class="navbar navbar-expand-lg  " style="background: #1e293b;">
+        <a class="navbar-brand" href="#">Edu</a>
+        <a  onclick="boshsahifa()" class="nav-link" style="color:blue; cursor: pointer;">Bosh sahifa </a>
+        <a class="nav-link" href="./index.html">Chiqish <span class="sr-only">(current)</span></a>
+      </nav>
+
     <div class=" container-fluid w-100">
        <!-- <a href="./kutubxona.html"> <button class="btn bt-ref book">Kutubxona</button></a> -->
         <div class="box-body col col-8">
@@ -30,5 +36,10 @@
     </div>
     </div>
     <script src="js/students.js"></script>
+    <script>
+        function boshsahifa() {
+           localStorage.getItem("role") == "student" ? window.location.href="https://hemis-app.vercel.app/student.html" :window.location.href="https://hemis-app.vercel.app/teacher.html" 
+        }
+    </script>
 </body>
 </html>

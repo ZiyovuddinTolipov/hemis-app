@@ -11,7 +11,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (event
     formData.append('file', file);
     formData.append('id', id);
     formData.append('username', username);
-    console.log(id,token,username);
+    // console.log(id,token,username);
 
     fetch('https://eduhemisuz.pythonanywhere.com/send_work/', {
       method: 'POST',

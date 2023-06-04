@@ -1,5 +1,6 @@
 var siteUrl = 'https://hemis-app.vercel.app';
-document.getElementById('uploadForm').addEventListener('submit', function (event) {
+
+document.getElementById('uploadForm').addEventListener('submit', event => {
     event.preventDefault();
     const token = localStorage.getItem('token');
     const id = localStorage.getItem('send_s');
@@ -31,7 +32,7 @@ document.getElementById('uploadForm').addEventListener('submit', function (event
       })
       .then(data => {
         data.response == 'OK' ? location.href = `${siteUrl}/files.html` : null;
-        // console.log(data);
+        console.log(data);
         // Handle the response data
       })
       .catch(error => {

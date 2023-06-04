@@ -34,7 +34,7 @@ fetch(apiUrl + endpoint + send_s, {
                     <td><a href="${item.file}">${item.file_name}</a></td>
                     
                     <td>${item.user}</td>
-                    <td> ${item.rating == false ? `<input type='number' class='input-group' id='ratingS' onchange='onchangeRat(${item.id})'>` : item.rating}</td>
+                    <td> ${item.rating == false ? `<input type='number' class='input-group' id='ratingS' onchange='onchangeRat(${item.id})' max='10'>` : item.rating}</td>
                     <td> ${item.rating == false ? `<button  class='p-1 border-0' onclick='SendRat(${item.id})'>Jo\'natish</button>` : ''}</td>
         `;
                 container.appendChild(tr);

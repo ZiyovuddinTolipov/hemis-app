@@ -31,8 +31,8 @@ document.getElementById('uploadForm').addEventListener('submit', event => {
         }
       })
       .then(data => {
-        data.response == 'OK' ? location.href = `${siteUrl}/files.html` : null;
-        console.log(data);
+        data.status == 'OK' ? location.href = `${siteUrl}/files.html` : null;
+        console.log(data.status);
         // Handle the response data
       })
       .catch(error => {

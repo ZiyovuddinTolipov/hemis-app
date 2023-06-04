@@ -8,12 +8,13 @@ let token = localStorage.getItem('token');
 let send_s = localStorage.getItem('send_s');
 
 let container = document.getElementById('teacher-page');
-console.log(token);
+// console.log(token);
 function errorMsg() {
     let tr = document.createElement('tr');
     tr.innerHTML = `<h1>Uzur xatolik</h1>`
     container.appendChild(div);
 }
+
 let myHeaders = new Headers();
 myHeaders.append("Authorization", `Token ${token}`);
 
@@ -25,7 +26,7 @@ fetch(apiUrl + endpoint + send_s, {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         data.status == "error" ? errorMsg() :
             data.forEach(item => {
                 let tr = document.createElement('tr');
@@ -80,7 +81,7 @@ function onchangeRat(param) {
 
 function anotherFunction(value, rat) {
     // console.log('Boshqa funksiya ichidagi qiymat:', value, rat);
-    if (0 <= rat <= 10) {
+    if (0<=rat && rat <11) {
         let myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${token}`);
     myHeaders.append("Content-Type", "application/json");

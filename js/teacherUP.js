@@ -80,7 +80,8 @@ function onchangeRat(param) {
 
 function anotherFunction(value, rat) {
     // console.log('Boshqa funksiya ichidagi qiymat:', value, rat);
-    let myHeaders = new Headers();
+    if (0 <= rat <= 10) {
+        let myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${token}`);
     myHeaders.append("Content-Type", "application/json");
 
@@ -99,9 +100,12 @@ function anotherFunction(value, rat) {
     fetch("https://eduhemisuz.pythonanywhere.com/send_work/", requestOptions)
         .then(response => response.json())
         .then(result => 
-            // result.status =="Done" ?  location.reload() : console.error(result)
-            console.log(result)
+            result.status =="Done" ?  location.reload() : console.error(result)
+            // console.log(result)
         )
         .catch(error => console.log('error', error));
+    } else {
+        alert('10 dan kichik son kiriting');
+    }
        
 }

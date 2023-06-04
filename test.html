@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10 dan katta son kiritish</title>
+    <script>
+        function validateNumber() {
+            var input = document.getElementById("numberInput").value;
+            if (input > 10) {
+                alert("Kiritgan son 10 dan katta.");
+                return false; // Formni yuborishni to'xtatish
+            }
+            return true; // Formni yuborishni davom ettirish
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateNumber()">
+        <label for="numberInput">Sonni kiriting:</label>
+        <input type="number" id="numberInput" name="numberInput" max="10" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

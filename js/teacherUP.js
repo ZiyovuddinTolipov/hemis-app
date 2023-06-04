@@ -100,8 +100,8 @@ function anotherFunction(value, rat) {
     fetch("https://eduhemisuz.pythonanywhere.com/send_work/", requestOptions)
         .then(response => response.json())
         .then(result => 
-            result.status =="Done" ?  location.reload() : console.error(result)
-            // console.log(result)
+            // result.status =="Done" ?  location.reload() : console.error(result)
+            console.log(result)
         )
         .catch(error => console.log('error', error));
     } else {

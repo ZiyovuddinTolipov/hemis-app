@@ -25,7 +25,7 @@ fetch(apiUrl + endpoint + send_s, {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         data.status == "error" ? errorMsg() :
             data.forEach(item => {
                 var tr = document.createElement('tr');
@@ -99,7 +99,8 @@ function anotherFunction(value, rat) {
     fetch("https://eduhemisuz.pythonanywhere.com/send_work/", requestOptions)
         .then(response => response.json())
         .then(result => 
-            result.status =="Done" ?  location.reload() : console.error(result)
+            // result.status =="Done" ?  location.reload() : console.error(result)
+            result.status =="Done" ?  console.log('done') : console.error(result)
         )
         .catch(error => console.log('error', error));
        

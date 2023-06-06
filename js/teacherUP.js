@@ -1,21 +1,20 @@
 
-let apiUrl = 'https://eduhemisuz.pythonanywhere.com';
-let endpoint = '/getwork/';
-let siteUrl = 'https://hemis-app.vercel.app';
-// let siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app';
+var apiUrl = 'https://eduhemisuz.pythonanywhere.com';
+var endpoint = '/getwork/';
+var siteUrl = 'https://hemis-app.vercel.app';
+// var siteUrl = 'file:///C:/Users/User/Desktop/Ziyovuddin/hemis-app';
 
-let token = localStorage.getItem('token');
-let send_s = localStorage.getItem('send_s');
+var token = localStorage.getItem('token');
+var send_s = localStorage.getItem('send_s');
 
-let container = document.getElementById('teacher-page');
-// console.log(token);
+var container = document.getElementById('teacher-page');
+console.log(token);
 function errorMsg() {
-    let tr = document.createElement('tr');
+    var tr = document.createElement('tr');
     tr.innerHTML = `<h1>Uzur xatolik</h1>`
     container.appendChild(div);
 }
-
-let myHeaders = new Headers();
+var myHeaders = new Headers();
 myHeaders.append("Authorization", `Token ${token}`);
 
 
@@ -26,16 +25,16 @@ fetch(apiUrl + endpoint + send_s, {
 })
     .then(response => response.json())
     .then(data => {
-        // console.log(data)
+        console.log(data)
         data.status == "error" ? errorMsg() :
             data.forEach(item => {
-                let tr = document.createElement('tr');
+                var tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td>${item.id}</td>
                     <td><a href="${item.file}">${item.file_name}</a></td>
                     
                     <td>${item.user}</td>
-                    <td> ${item.rating == false ? `<input type='number' class='input-group' id='ratingS' onchange='onchangeRat(${item.id})' max='10' required>` : item.rating}</td>
+                    <td> ${item.rating == false ? `<input type='number' class='input-group' id='ratingS' onchange='onchangeRat(${item.id})'>` : item.rating}</td>
                     <td> ${item.rating == false ? `<button  class='p-1 border-0' onclick='SendRat(${item.id})'>Jo\'natish</button>` : ''}</td>
         `;
                 container.appendChild(tr);
@@ -80,18 +79,17 @@ function onchangeRat(param) {
 }
 
 function anotherFunction(value, rat) {
-    // console.log('Boshqa funksiya ichidagi qiymat:', value, rat);
-    if (0<=rat && rat <11) {
-        let myHeaders = new Headers();
+    console.log('Boshqa funksiya ichidagi qiymat:', value, rat);
+    var myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${token}`);
     myHeaders.append("Content-Type", "application/json");
 
-    let raw = JSON.stringify({
+    var raw = JSON.stringify({
         "task_id": value,
         "rate": rat
     });
 
-    let requestOptions = {
+    var requestOptions = {
         method: 'PUT',
         headers: myHeaders,
         body: raw,
@@ -101,12 +99,8 @@ function anotherFunction(value, rat) {
     fetch("https://eduhemisuz.pythonanywhere.com/send_work/", requestOptions)
         .then(response => response.json())
         .then(result => 
-            // result.status =="Done" ?  location.reload() : console.error(result)
-            console.log(result)
+            result.status =="Done" ?  location.reload() : console.error(result)
         )
         .catch(error => console.log('error', error));
-    } else {
-        alert('10 dan kichik son kiriting');
-    }
        
 }

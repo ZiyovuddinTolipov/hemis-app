@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kutubxona</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/student-file.css">
+<link rel="stylesheet" href="css/teacher-files.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  " style="background: #1e293b;">
+        <a class="navbar-brand" href="#">Edu</a>
+        <a  onclick="boshsahifa()" class="nav-link" style="color:blue; cursor: pointer;">Bosh sahifa </a>
+        <a class="nav-link" href="./index.html">Chiqish <span class="sr-only">(current)</span></a>
+      </nav>
+    
+        <section class="content container-fluid">
+            <div class="row p-2">
+                <div class="col col-md-8 col-lg-8">
+                    <div class="box box-default ">
+                        <div class="box-header with-border ml-4">
+                            <h3 class="box-title ">Kutubxona</h3>
+                        </div>
+    
+                        <div id="data-grid" class="grid-view">
+                            <div class="box-body no-padding">
+                                <table class="table  table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>#id</th>
+                                            <th>Fayl</th>
+                                            <th>Nomi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id='kutubxona'>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <script src="./js/books.js">
+    </script>
+    <script>
+        function boshsahifa() {
+           localStorage.getItem("role") == "student" ? window.location.href="https://hemis-app.vercel.app/student.html" :window.location.href="https://hemis-app.vercel.app/teacher.html" 
+        }
+    </script>
+</body>
+</html>

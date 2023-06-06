@@ -8,7 +8,7 @@ var token = localStorage.getItem('token');
 var send_s = localStorage.getItem('send_s');
 
 var container = document.getElementById('teacher-page');
-console.log(token);
+// console.log(token);
 function errorMsg() {
     var tr = document.createElement('tr');
     tr.innerHTML = `<h1>Uzur xatolik</h1>`
@@ -25,7 +25,7 @@ fetch(apiUrl + endpoint + send_s, {
 })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         data.status == "error" ? errorMsg() :
             data.forEach(item => {
                 var tr = document.createElement('tr');
